@@ -3,7 +3,41 @@
 <div class="m-2">
   <h1 class="font-bold text-blue-600 text-xl">{{title}}</h1>
 
-  <p>
-    Este é o conteúdo da página.
-  </p>
+  <div class="mt-4">
+    <label class="block mb-1">Informe uma palavra:</label>
+    <input
+      class="border p-2 w-full rounded"
+      [(ngModel)]="palavra"
+    />
+
+    <p class="mt-2 text-sm text-gray-700">
+      A palavra tem <strong>{{ contarLetras() }}</strong> letras e <strong>{{ validarPalindromo() }}</strong>.
+    </p>
+
+    <label class="block mb-1">Informe o primeiro valor:</label>
+    <input
+    class="border p-2 w-full rounded"
+    [(ngModel)]="valor1"
+    />
+
+    <label class="block mb-1">Informe o segundo valor:</label>
+    <input
+    class="border p-2 w-full rounded"
+    [(ngModel)]="valor2"
+    />
+
+    <select [(ngModel)]="operacaoSelecionada">
+      <option value="soma">Somar</option>
+      <option value="subtracao">Subtrair</option>
+      <option value="multiplicacao">Multiplicar</option>
+      <option value="divisao">Dividir</option>
+    </select>
+    
+    <p class="mt-2 text-sm text-gray-700">
+      Resultado: <strong>{{ calcularOperacao(operacaoSelecionada) }}</strong> 
+    </p>
+
+  </div>
+  
+  
 </div>
